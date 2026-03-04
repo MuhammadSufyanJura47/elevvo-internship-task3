@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sufyan TaskFlow</title>
+  <meta name="description" content="TaskFlow helps you capture, plan, and complete tasks with clarity." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Background (Three.js) -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="TaskFlow home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">TaskFlow</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#tasks" class="pill">Tasks</a>
+        <a href="#contact" class="pill">Contact</a>
+      </nav>
+
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileNav" aria-hidden="true">
+      <a href="#features">Features</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#tasks">Tasks</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn--small" href="#tasks">Open Task Manager</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top">
+    <section class="hero reveal">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">A calmer way to get things done</p>
+          <h1>Organize tasks. Build momentum. <span class="accent">Stay in flow.</span></h1>
+          <p class="lead">
+            TaskFlow turns your to-dos into a lightweight system: capture in seconds, plan with clarity,
+            and finish with confidence—across phone and desktop.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#tasks">Open Task Manager</a>
+            <a class="btn btn--ghost" href="#features">See features</a>
+          </div>
+
+          <div class="hero__meta" aria-label="Highlights">
+            <div class="meta">
+              <div class="meta__big">2 min</div>
+              <div class="meta__small">to set up</div>
+            </div>
+            <div class="meta">
+              <div class="meta__big">0%</div>
+              <div class="meta__small">noise</div>
+            </div>
+            <div class="meta">
+              <div class="meta__big">100%</div>
+              <div class="meta__small">focus</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card" aria-label="App preview">
+          <div class="preview">
+            <div class="preview__top">
+              <span class="dot red" aria-hidden="true"></span>
+              <span class="dot yellow" aria-hidden="true"></span>
+              <span class="dot green" aria-hidden="true"></span>
+              <span class="preview__title">Today</span>
+              <span class="chip">Sync on</span>
+            </div>
+
+            <div class="preview__body">
+              <div class="task">
+                <input type="checkbox" checked aria-label="Task completed" disabled />
+                <div>
+                  <div class="task__name done">Review sprint goals</div>
+                  <div class="task__meta">10:00 · Planning</div>
+                </div>
+                <span class="tag tag--blue">Work</span>
+              </div>
+
+              <div class="task">
+                <input type="checkbox" aria-label="Task not completed" disabled />
+                <div>
+                  <div class="task__name">Draft project outline</div>
+                  <div class="task__meta">12:30 · Deep work</div>
+                </div>
+                <span class="tag tag--purple">Focus</span>
+              </div>
+
+              <div class="task">
+                <input type="checkbox" aria-label="Task not completed" disabled />
+                <div>
+                  <div class="task__name">Groceries & meal prep</div>
+                  <div class="task__meta">18:00 · Personal</div>
+                </div>
+                <span class="tag tag--green">Life</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="stats">
+                <div class="stat">
+                  <div class="stat__num">7</div>
+                  <div class="stat__label">tasks today</div>
+                </div>
+                <div class="stat">
+                  <div class="stat__num">3</div>
+                  <div class="stat__label">done</div>
+                </div>
+                <div class="stat">
+                  <div class="stat__num">1</div>
+                  <div class="stat__label">in focus</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-note" aria-hidden="true">
+            <div class="note__icon">⚡</div>
+            <div>
+              <div class="note__title">Smart nudges</div>
+              <div class="note__sub">Gentle reminders, not spam.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2>Everything you need to stay consistent</h2>
+          <p class="muted">Simple structure, powerful workflows—without the clutter.</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M9.2 12.4l1.8 1.8 3.9-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 21a9 9 0 1 0-9-9 9 9 0 0 0 9 9Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Capture → Complete</h3>
+            <p>Quick add tasks, break them into steps, and finish with a clean daily view.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l1.2 3.8L17 7l-3.8 1.2L12 12l-1.2-3.8L7 7l3.8-1.2L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M19 13l.8 2.4L22 16l-2.2.6L19 19l-.8-2.4L16 16l2.2-.6L19 13Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M5 13l.8 2.4L8 16l-2.2.6L5 19l-.8-2.4L2 16l2.2-.6L5 13Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Focus mode</h3>
+            <p>Pick one priority and let TaskFlow minimize distractions with a single-task view.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3l9 5-9 5-9-5 9-5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M3 12l9 5 9-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M3 16.5l9 4.5 9-4.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Projects that scale</h3>
+            <p>Organize by projects, tags, and deadlines—without turning your app into a spreadsheet.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="section section--alt reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2>Loved by people who ship</h2>
+          <p class="muted">A few words from early TaskFlow users.</p>
+        </div>
+
+        <div class="grid3">
+          <figure class="card quote">
+            <blockquote>
+              “TaskFlow is the first task app that doesn’t punish me for being human. The daily view is perfect.”
+            </blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">AR</span>
+              <div>
+                <div class="who">Amina R.</div>
+                <div class="muted">Product Designer</div>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="card quote">
+            <blockquote>
+              “Focus mode is a game-changer. I stopped bouncing between lists and started finishing real work.”
+            </blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">JM</span>
+              <div>
+                <div class="who">Jon M.</div>
+                <div class="muted">Indie Developer</div>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="card quote">
+            <blockquote>
+              “Our small team finally has a shared rhythm—without adding meetings. Clean UI, fast, and reliable.”
+            </blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">SK</span>
+              <div>
+                <div class="who">Sara K.</div>
+                <div class="muted">Team Lead</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2>Pricing that grows with you</h2>
+          <p class="muted">Start free. Upgrade when you want more power and collaboration.</p>
+        </div>
+
+        <div class="grid3 pricing">
+          <article class="card price">
+            <div class="price__top">
+              <h3>Free</h3>
+              <p class="muted">For personal momentum</p>
+            </div>
+
+            <div class="price__cost">
+              <span class="currency">$</span><span class="amount">0</span><span class="per">/mo</span>
+            </div>
+
+            <ul class="list">
+              <li>Unlimited tasks</li>
+              <li>Daily planning view</li>
+              <li>Basic reminders</li>
+            </ul>
+
+            <a class="btn btn--ghost" href="#tasks" data-plan="Free">Get started</a>
+          </article>
+
+          <article class="card price price--featured" aria-label="Pro plan recommended">
+            <div class="badge">Most popular</div>
+
+            <div class="price__top">
+              <h3>Pro</h3>
+              <p class="muted">For focused builders</p>
+            </div>
+
+            <div class="price__cost">
+              <span class="currency">$</span><span class="amount">9</span><span class="per">/mo</span>
+            </div>
+
+            <ul class="list">
+              <li>Focus mode + smart nudges</li>
+              <li>Projects, tags, deadlines</li>
+              <li>Cloud sync across devices</li>
+            </ul>
+
+            <a class="btn" href="#tasks" data-plan="Pro">Start Pro</a>
+          </article>
+
+          <article class="card price">
+            <div class="price__top">
+              <h3>Team</h3>
+              <p class="muted">For small teams</p>
+            </div>
+
+            <div class="price__cost">
+              <span class="currency">$</span><span class="amount">19</span><span class="per">/user</span>
+            </div>
+
+            <ul class="list">
+              <li>Shared projects</li>
+              <li>Assignments & comments</li>
+              <li>Admin controls</li>
+            </ul>
+
+            <a class="btn btn--ghost" href="#tasks" data-plan="Team">Talk to sales</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task Manager -->
+    <section id="tasks" class="section section--alt reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2>Try TaskFlow (demo)</h2>
+          <p class="muted">Add tasks, set priority, filter, and your list will persist on this device.</p>
+        </div>
+
+        <div class="taskapp card">
+          <div class="taskapp__top">
+            <div class="taskapp__plan">
+              Selected plan:
+              <span class="plan-pill" id="selectedPlan">Pro</span>
+            </div>
+
+            <div class="taskapp__filters" aria-label="Task filters">
+              <button class="chipbtn active" data-filter="all" type="button">All</button>
+              <button class="chipbtn" data-filter="open" type="button">Open</button>
+              <button class="chipbtn" data-filter="done" type="button">Done</button>
+            </div>
+          </div>
+
+          <form class="taskapp__form" id="taskForm">
+            <label class="sr-only" for="taskTitle">Task title</label>
+            <input id="taskTitle" name="title" type="text" placeholder="Add a task… (e.g., 'Finish landing page')" minlength="2" required />
+
+            <select id="taskPriority" name="priority" aria-label="Priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+
+            <button class="btn" type="submit">Add</button>
+          </form>
+
+          <div class="taskapp__list" id="taskList" aria-label="Task list"></div>
+
+          <div class="taskapp__bottom">
+            <div class="muted" id="taskStats">0 tasks</div>
+            <div class="taskapp__actions">
+              <button class="btn btn--ghost" id="clearDone" type="button">Clear done</button>
+              <button class="btn btn--ghost" id="clearAll" type="button">Clear all</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--cta reveal">
+      <div class="container cta">
+        <div>
+          <h2>Ready to feel on top of your tasks?</h2>
+          <p class="muted">Try TaskFlow today. Keep it simple, keep it moving.</p>
+        </div>
+        <div class="cta__actions">
+          <a class="btn" href="#tasks">Open Task Manager</a>
+          <a class="btn btn--ghost" href="#features">Explore</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer reveal">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="brand brand--footer">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text">TaskFlow</span>
+        </div>
+        <p class="muted">A fictional app landing page demo. Built with HTML, CSS, JS, and Three.js.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@taskflow.app">hello@taskflow.app</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#features">Features</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Social</h4>
+        <div class="social" aria-label="Social links">
+          <a class="social__btn" href="https://x.com" target="_blank" rel="noreferrer" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23 22h-6.8l-5.3-6.9L4.7 22H1.6l7.3-8.4L1 2h7l4.8 6.3L18.9 2Zm-1.2 18h1.7L7.2 3.9H5.4L17.7 20Z"/>
+            </svg>
+          </a>
+
+          <a class="social__btn" href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.2.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1 1.7-.7 2.1-1.1.1-.7.4-1.1.7-1.3-2.5-.3-5.2-1.3-5.2-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.2 5.9.4.4.8 1.1.8 2.2V22c0 .4.2.7.8.6A11.2 11.2 0 0 0 12 .8Z"/>
+            </svg>
+          </a>
+
+          <a class="social__btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M20.4 20.4h-3.5v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.6H9.5V9h3.4v1.6h.1c.5-1 1.7-2 3.5-2 3.7 0 4.4 2.4 4.4 5.6v6.2ZM5.6 7.5A2 2 0 1 1 5.6 3.5a2 2 0 0 1 0 4ZM3.9 20.4h3.5V9H3.9v11.4Z"/>
+            </svg>
+          </a>
+
+          <a class="social__btn" href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5A2.7 2.7 0 0 0 2.4 7.2 28 28 0 0 0 2 12c0 1.6.1 3.2.4 4.8a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9c.3-1.6.4-3.2.4-4.8 0-1.6-.1-3.2-.4-4.8ZM10.2 15V9l5.2 3-5.2 3Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span class="muted">© <span id="year"></span> TaskFlow. All rights reserved.</span>
+      <a class="muted" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
